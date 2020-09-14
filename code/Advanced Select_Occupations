@@ -18,3 +18,49 @@ FROM(
   ORDER BY NAME
 ) Temp
 GROUP BY RowNumber;
+
+
+
+
+
+
+(comments;
+
+(SELECT CASE WHEN OCCUPATION = 'Doctor' THEN (@r1:=@r1+1)
+            WHEN OCCUPATION = 'Professor' THEN (@r2:=@r2+1)
+            WHEN OCCUPATION = 'Singer' THEN (@r3:=@r3+1)
+            WHEN OCCUPATION = 'Actor' THEN (@r4:=@r4+1) END AS RowNumber,
+    CASE WHEN OCCUPATION = 'Doctor' THEN Name END AS Doctor,
+    CASE WHEN OCCUPATION = 'Professor' THEN Name END AS Professor,
+    CASE WHEN OCCUPATION = 'Singer' THEN Name END AS Singer,
+    CASE WHEN OCCUPATION = 'Actor' THEN Name END AS Actor
+FROM OCCUPATIONS
+ORDER BY NAME) Temp
+  
+  
+Temp:
+RowNumber Doctor Professor Singer Actor
+1 Aamina NULL NULL NULL
+1 NULL Ashley NULL NULL
+2 NULL Belvet NULL NULL
+3 NULL Britney NULL NULL
+1 NULL NULL Christeen NULL
+1 NULL NULL NULL Eve
+2 NULL NULL Jane NULL
+2 NULL NULL NULL Jennifer
+3 NULL NULL Jenny NULL
+2 Julia NULL NULL NULL
+3 NULL NULL NULL Ketty
+4 NULL NULL Kristeen NULL
+4 NULL Maria NULL NULL
+5 NULL Meera NULL NULL
+6 NULL Naomi NULL NULL
+3 Priya NULL NULL NULL
+7 NULL Priyanka NULL NULL
+4 NULL NULL NULL Samantha
+
+SELECT MIN(DOCTOR), MIN(PROFESSOR), MIN(SINGER), MIN(ACTOR) FROM Temp
+GROUP BY RowNumber;
+ 
+
+)
