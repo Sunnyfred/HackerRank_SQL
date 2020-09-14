@@ -61,6 +61,8 @@ RowNumber Doctor Professor Singer Actor
 
 SELECT MIN(DOCTOR), MIN(PROFESSOR), MIN(SINGER), MIN(ACTOR) FROM Temp
 GROUP BY RowNumber;
+
+MIN and MAX can be used to ignore NULL values!
  
 
 )
