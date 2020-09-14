@@ -1,0 +1,13 @@
+https://www.hackerrank.com/challenges/african-cities/problem?h_r=next-challenge&h_v=zen
+
+SELECT CITY.NAME 
+FROM CITY, COUNTRY
+WHERE CITY.COUNTRYCODE = COUNTRY.CODE AND COUNTRY.CONTINENT = 'Africa';
+
+or
+
+SELECT CITY.NAME
+FROM CITY
+INNER JOIN COUNTRY 
+ON CITY.COUNTRYCODE = COUNTRY.CODE 
+WHERE COUNTRY.CONTINENT = 'Africa';
