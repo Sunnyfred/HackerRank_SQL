@@ -1,0 +1,6 @@
+https://www.hackerrank.com/challenges/weather-observation-station-20/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+
+SELECT ROUND(S.LAT_N,4) FROM STATION S
+WHERE 1>=( ABS( (SELECT COUNT(*) FROM STATION S1 WHERE S1.LAT_N >= S.LAT_N) - (SELECT COUNT(*) FROM STATION S2 WHERE S2.LAT_N <= S.LAT_N) ) )
+ORDER BY LAT_N 
+
