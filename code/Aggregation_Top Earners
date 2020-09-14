@@ -1,0 +1,12 @@
+https://www.hackerrank.com/challenges/earnings-of-employees/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+
+SELECT salary * months AS earnings, COUNT(*)
+FROM Employee
+GROUP BY earnings
+ORDER BY earnings DESC
+LIMIT 1;
+
+or 
+
+select max(salary*months), count(*) from employee
+where (salary*months) = (select max(salary*months) from employee);
