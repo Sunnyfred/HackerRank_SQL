@@ -1,0 +1,9 @@
+https://www.hackerrank.com/challenges/weather-observation-station-9/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+
+SELECT DISTINCT CITY FROM STATION
+WHERE CITY REGEXP '^[^aeiou]';
+
+or 
+
+select distinct city from station 
+where not (city like 'a%' or city like 'e%' or city like 'i%' or city like 'o%' or city like 'u%');
