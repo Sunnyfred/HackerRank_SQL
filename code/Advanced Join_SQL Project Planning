@@ -1,0 +1,8 @@
+https://www.hackerrank.com/challenges/sql-projects/problem
+
+select Start_Date, min(end_Date) from 
+(select Start_Date from projects where Start_Date not in (select end_date from projects)) a,
+(select end_Date from projects where end_Date not in (select start_date from projects)) b
+where start_date < end_date
+group by start_date   /*we use aggregation function min, we need to use group by accordingly*/
+order by datediff(min(end_Date), Start_Date), Start_Date
